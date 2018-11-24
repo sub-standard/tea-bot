@@ -2,27 +2,28 @@ package com.substandard.teabot;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import com.google.android.material.tabs.TabLayout;
 
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
+import androidx.viewpager.widget.ViewPager;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    private TabAdapter adapter;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+        viewPager = findViewById(R.id.viewPager);
+        tabLayout = findViewById(R.id.tabLayout);
 
-    public void startTea(View view) {
-        try {
-            Unirest.post("http://test.com")
-                    .header("accept", "application/json")
-                    .field("time", "60")
-                    .asJson();
-        } catch (UnirestException e) {
-            System.out.println("Error");
-        }
+        adapter = new TabAdapter(getSupportFragmentManager());
+        adapter.addFragment(new Home(), "Home");
+        adapter.addFragment(new Camera(), "Camera");
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
