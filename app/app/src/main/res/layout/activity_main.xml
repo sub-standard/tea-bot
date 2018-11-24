@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/welcome_text"
-        android:layout_width="179dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="8dp"
-        android:autoSizeTextType="uniform"
-        android:text="@string/welcome_text"
-        android:textColor="#fefefe"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/start_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <include layout="@layout/app_bar" />
 
-    <Button
-        android:id="@+id/start_button"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/start_button"
-        android:onClick="startTea"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:minHeight="?actionBarSize"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorHeight="4dp"
+        app:tabBackground="@color/colorPrimary"
+        app:tabMode="fixed">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>

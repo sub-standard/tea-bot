@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary"
+    android:layout_gravity="center">
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="179dp"
+        android:layout_height="58dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/welcome_text"
+        android:textColor="#fefefe"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:onClick="startTea"
+        android:text="@string/start_button"/>
+    >
+</RelativeLayout>
