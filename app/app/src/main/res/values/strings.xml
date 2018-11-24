@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TeaBot</string>
+    <string name="welcome_text">Hey human, fancy a cuppa?</string>
+    <string name="start_button">Yes please!</string>
+</resources>
