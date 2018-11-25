@@ -1,25 +1,14 @@
 package com.substandard.teabot;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
+import android.os.Bundle;
+import android.media.MediaPlayer;
+import com.google.android.material.tabs.TabLayout;
 
 
 public class MainActivity extends AppCompatActivity {
-
-    private TabAdapter adapter;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private MediaPlayer mediaPlayer;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +22,17 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new Camera(), "Camera");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+    }
 
+    private void startMusic() {
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(this, R.raw.song);
+            mediaPlayer.start();
+            mediaPlayer.setLooping(true);
+        }
+
+        if (!mediaPlayer.isPlaying()) {
+            mediaPlayer.start();
+        }
     }
 }
