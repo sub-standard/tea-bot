@@ -11,8 +11,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 class FaceAnalysis {
-    private String key = "{147ea959552a46d1b8751422c7afa51b}";
-
     static void analyse(byte[] picture) {
         new FaceDetectApi().execute(picture);
     }
