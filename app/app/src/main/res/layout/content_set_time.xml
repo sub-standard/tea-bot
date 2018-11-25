@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <Button
+        android:id="@+id/btn_begin"
+        android:layout_width="136dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/timeToBrew"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="134dp"
+        android:text="Brew for me!" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="56dp"
+        android:text="Please set the time you would like your tea to be brewed"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/timeToBrew"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginEnd="51dp"
+        android:ems="10"
+        android:hint="How many seconds"
+        android:inputType="time"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+
+</RelativeLayout>

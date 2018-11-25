@@ -1,9 +1,17 @@
 package com.substandard.teabot;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 
@@ -13,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -25,5 +32,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new Camera(), "Camera");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
     }
 }
