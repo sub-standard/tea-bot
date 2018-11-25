@@ -35,7 +35,7 @@ public class SetTime extends AppCompatActivity implements View.OnClickListener{
                     break;
                 }
 
-                FaceAnalysis.callServer(sec);
+                TeaBot.run(sec);
 
                 Toast.makeText(getApplicationContext(),"It will be brewed for "+ sec +" seconds",Toast.LENGTH_SHORT).show();
 

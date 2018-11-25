@@ -48,33 +48,9 @@ class FaceAnalysis {
         }
     }
 
-    static void evaulateEmotion(double smile) {
+    private static void evaulateEmotion(double smile) {
         if (smile > 0.5) {
-            new TeaBotApi().execute(60);
-        }
-        else{
-            new TeaBotApi().execute(30);
-        }
-    }
-
-    static void callServer(int sec){
-        new TeaBotApi().execute(sec);
-    }
-
-
-    private static class TeaBotApi extends AsyncTask<Integer, HttpResponse<JsonNode>, HttpResponse<JsonNode>>{
-        protected HttpResponse<JsonNode> doInBackground(Integer... seconds) {
-            try {
-                return Unirest.post("http://192.168.43.24:3000/brew/" + seconds[0]).asJson();
-            } catch (UnirestException e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-
-        protected void onPostExecute(HttpResponse<JsonNode> response) {
-
+            TeaBot.run(60);
         }
     }
 }
