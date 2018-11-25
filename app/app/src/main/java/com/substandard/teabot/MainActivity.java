@@ -24,10 +24,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        viewPager = findViewById(R.id.viewPager);
-        tabLayout = findViewById(R.id.tabLayout);
 
-        adapter = new TabAdapter(getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+
+        TabAdapter adapter = new TabAdapter(getSupportFragmentManager());
         adapter.addFragment(new Home(), "Home");
         adapter.addFragment(new Camera(), "Camera");
         viewPager.setAdapter(adapter);
